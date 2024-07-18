@@ -1,0 +1,66 @@
+﻿@model List<BUTPFIS.web.Models.Domain.FacultyInfo>
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container text-center">
+        <h1>Faculties</h1>
+    </div>
+</div>
+
+<div class="container py-5">
+    @if (Model != null && Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Faculty Id</td>
+                    <td>Faculty Name</td>
+                    <td>Designation</td>
+                    <td>Mobile Number</td>
+                    <td>Email</td>
+                    <td>Personal Information</td>
+                    <td>Expertise</td>
+                    <td>Experience</td>
+                    <td>Education</td>
+                    <td>Honours and Awards</td>
+                    <td>Patents</td>
+                    <td>Publications</td>
+                    <td> </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var facultyInfo in Model)
+                {
+                    <tr>
+                        <td>@facultyInfo.FId</td>
+                        <td>@facultyInfo.Name</td>
+                        <td>@facultyInfo.Designation</td>
+                        <td>@facultyInfo.MobileNo</td>
+                        <td>@facultyInfo.Email</td>
+                        <td>@facultyInfo.PersonalInfo</td>
+                        <td>@facultyInfo.Expertise</td>
+                        <td>@facultyInfo.Experience</td>
+                        <td>@facultyInfo.Education</td>
+                        <td>@facultyInfo.Honours</td>
+                        <td>@facultyInfo.Patents</td>
+                        <td>@facultyInfo.Publications</td>
+
+                        <td>
+                            <a asp-area=""
+                           asp-controller="AdminFaculty"
+                           asp-action="Edit"
+                            asp-route-id="@facultyInfo.FId">Edit</a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No Faculties!</p>
+    }
+
+</div>

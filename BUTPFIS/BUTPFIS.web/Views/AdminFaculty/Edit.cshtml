@@ -1,0 +1,98 @@
+﻿@model BUTPFIS.web.Models.ViewModels.EditFaculty
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Edit Faculty Information</h1>
+    </div>
+</div>
+
+<div class="container py-3">
+
+    @if (Model != null)
+    {
+
+        <form method="post">
+
+        <div class="mb-3">
+            <label class="form-label">Faculty Id</label>
+            <input type="text" class="form-control" id="fId" asp-for="FId" readonly />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Faculty Name</label>
+            <input type="text" class="form-control" id="name" asp-for="Name" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Designation</label>
+            <input type="text" class="form-control" id="designation" asp-for="Designation" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Mobile</label>
+            <input type="text" class="form-control" id="mobile" asp-for="MobileNo" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="text" class="form-control" id="email" asp-for="Email" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Personal Information</label>
+            <textarea class="form-control" id="personalInfo" asp-for="PersonalInfo"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Education</label>
+            <textarea class="form-control" id="education" asp-for="Education"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Expertise</label>
+            <textarea class="form-control" id="expertise" asp-for="Expertise"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Experience</label>
+            <textarea class="form-control" id="experience" asp-for="Experience"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Honours and Awards</label>
+            <textarea class="form-control" id="honours" asp-for="Honours"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Patents</label>
+            <textarea class="form-control" id="patents" asp-for="Patents"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Publications</label>
+            <textarea class="form-control" id="publications" asp-for="Publications"></textarea>
+        </div>
+
+        <div class="mb-3 d-flex">
+            <button type="submit" class="btn btn-dark">Update</button>
+
+            <button type="submit"
+                    class="btn btn-danger ms-2"
+                    asp-area=""
+                    asp-controller="AdminFaculty"
+                    asp-action="Delete">
+                Delete
+            </button>
+
+        </form>
+
+    }
+
+    else
+    {
+        <p> Faculty not found!</p>
+    }
+
+</div>
