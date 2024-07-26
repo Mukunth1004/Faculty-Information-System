@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BUTPFIS.web.Migrations
 {
     [DbContext(typeof(FISDbContext))]
-    [Migration("20240715075250_Initial Migration")]
-    partial class InitialMigration
+    [Migration("20240722161941_Third migration")]
+    partial class Thirdmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,21 @@ namespace BUTPFIS.web.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("BUTPFIS.web.Models.Domain.CourseInfo", b =>
+                {
+                    b.Property<Guid>("CourseId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CourseName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CourseId");
+
+                    b.ToTable("CourseInfos");
+                });
 
             modelBuilder.Entity("BUTPFIS.web.Models.Domain.FacultyInfo", b =>
                 {
@@ -48,6 +63,10 @@ namespace BUTPFIS.web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Expertise")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FacultyImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -78,9 +97,43 @@ namespace BUTPFIS.web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Seminar")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("FId");
 
                     b.ToTable("FacultyInfos");
+                });
+
+            modelBuilder.Entity("CourseInfoFacultyInfo", b =>
+                {
+                    b.Property<Guid>("CourseInfosCourseId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("FacultyInfosFId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("CourseInfosCourseId", "FacultyInfosFId");
+
+                    b.HasIndex("FacultyInfosFId");
+
+                    b.ToTable("CourseInfoFacultyInfo");
+                });
+
+            modelBuilder.Entity("CourseInfoFacultyInfo", b =>
+                {
+                    b.HasOne("BUTPFIS.web.Models.Domain.CourseInfo", null)
+                        .WithMany()
+                        .HasForeignKey("CourseInfosCourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BUTPFIS.web.Models.Domain.FacultyInfo", null)
+                        .WithMany()
+                        .HasForeignKey("FacultyInfosFId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

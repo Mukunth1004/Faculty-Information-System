@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> signInManager
+
+@{
+    var isAdmin = User.IsInRole("Admin");
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,6 +14,9 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BUTPFIS.web.styles.css" asp-append-version="true" />
+
+    <link href='https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js'></script>
 </head>
 <body>
     <header>
@@ -23,29 +33,109 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li> 
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Admin
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" 
-                                    asp-area="" 
-                                    asp-controller="AdminFaculty" 
-                                    asp-action="Add">
-                                    Add Faculty (Admin)</a></li>
+                         @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Admin
+                                </a>
+                                <ul class="dropdown-menu">
 
-                                <li>
-                                    <a class="dropdown-item"
-                                       asp-area=""
-                                       asp-controller="AdminFaculty"
-                                       asp-action="List">
-                                        All Faculties
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                        asp-area=""
+                                        asp-controller="AdminCourse"
+                                        asp-action="Add">
+                                            Add Course
+                                        </a>
+                                    </li>
+
+                                    <li><a class="dropdown-item" 
+                                        asp-area="" 
+                                        asp-controller="AdminFaculty" 
+                                        asp-action="Add">
+                                            Add Faculty (Admin)</a></li>
+
+                                    <li>
+                                        <a class="dropdown-item"
+                                        asp-area=""
+                                        asp-controller="AdminCourse"
+                                        asp-action="List">
+                                            All Courses
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item"
+                                        asp-area=""
+                                        asp-controller="AdminFaculty"
+                                        asp-action="List">
+                                            All Faculty Information
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item"
+                                        asp-area=""
+                                        asp-controller="AdminUsers"
+                                        asp-action="List">
+                                            Manage Faculties
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
 
                     </ul>
+
+                    <div class="d-flex align-items-center">
+
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <div class="nav-item dropdown me-3">
+                                @if (!isAdmin)
+                                {
+                                    <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        @User?.Identity?.Name
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item"
+                                               asp-area=""
+                                               asp-controller="EditProfile"
+                                               asp-action="Edit">
+                                                Edit My Profile
+                                            </a>
+                                        </li>
+                                    </ul>
+                                }
+                                else
+                                {
+                                    <span class="nav-link text-light">@User?.Identity?.Name</span>
+                                }
+                            </div>
+
+                            <a class="btn me-3 bg-light text-dark"
+                               asp-area=""
+                               asp-controller="Account"
+                               asp-action="Logout">Logout</a>
+                        }
+                        else
+                        {
+                            <a class="btn me-3 bg-light text-dark"
+                               asp-area=""
+                               asp-controller="Account"
+                               asp-action="Login">Login</a>
+
+                            <a class="btn me-3 bg-light text-dark"
+                               asp-area=""
+                               asp-controller="Account"
+                               asp-action="Register">Register</a>
+
+                        }
+
+                    </div>
+
                 </div>
             </div>
         </nav>

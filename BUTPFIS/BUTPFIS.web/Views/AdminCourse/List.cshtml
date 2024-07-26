@@ -1,0 +1,60 @@
+﻿@model List<BUTPFIS.web.Models.Domain.CourseInfo>
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container text-center">
+        <h1>Courses</h1>
+    </div>
+</div>
+
+<form method="get"
+      asp-controller="AdminCourse" ,
+      asp-action="List">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col col-md-3 d-flex">
+                <input type="text" class="form-control"
+                       name="searchQuery" value="@ViewBag.SearchQuery" />
+                <button type="submit" class="btn btn-warning ms-3">Search</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="container py-5">
+    @if (Model != null && Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Course Id</td>
+                    <td>Course Name</td>
+                    <td> </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var courseInfo in Model)
+                {
+                    <tr>
+                        <td>@courseInfo.CourseId</td>
+                        <td>@courseInfo.CourseName</td>
+
+                        <td>
+                            <a asp-area=""
+                               asp-controller="AdminCourse"
+                               asp-action="Edit"
+                               asp-route-id="@courseInfo.CourseId">Edit</a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No Courses!</p>
+    }
+
+</div>

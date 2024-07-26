@@ -18,6 +18,30 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\P Amal Prasad\Desktop\BUTPFIS\BUTPFIS\BUTPFIS.web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/P Amal Prasad/Desktop/BUTPFIS/BUTPFIS/BUTPFIS.web/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/P Amal Prasad/Desktop/BUTPFIS/BUTPFIS/BUTPFIS.web/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/P Amal Prasad/Desktop/BUTPFIS/BUTPFIS/BUTPFIS.web/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/P Amal Prasad/Desktop/BUTPFIS/BUTPFIS/BUTPFIS.web/Views/AdminCourse/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Db3Vyc2VcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/P Amal Prasad/Desktop/BUTPFIS/BUTPFIS/BUTPFIS.web/Views/AdminCourse/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Db3Vyc2VcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/P Amal Prasad/Desktop/BUTPFIS/BUTPFIS/BUTPFIS.web/Views/AdminCourse/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Db3Vyc2VcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/P Amal Prasad/Desktop/BUTPFIS/BUTPFIS/BUTPFIS.web/Views/AdminFaculty/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5GYWN1bHR5XEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -28,6 +52,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/P Amal Prasad/Desktop/BUTPFIS/BUTPFIS/BUTPFIS.web/Views/AdminFaculty/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5GYWN1bHR5XExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/P Amal Prasad/Desktop/BUTPFIS/BUTPFIS/BUTPFIS.web/Views/AdminUsers/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2Vyc1xMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/P Amal Prasad/Desktop/BUTPFIS/BUTPFIS/BUTPFIS.web/Views/EditProfile/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWRpdFByb2ZpbGVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/P Amal Prasad/Desktop/BUTPFIS/BUTPFIS/BUTPFIS.web/Views/Home/Index.cshtml]

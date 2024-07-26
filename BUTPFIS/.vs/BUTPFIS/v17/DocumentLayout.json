@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|c:\\users\\p amal prasad\\desktop\\butpfis\\butpfis\\butpfis.web\\controllers\\adminfacultycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|solutionrelative:butpfis.web\\controllers\\adminfacultycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|c:\\users\\p amal prasad\\desktop\\butpfis\\butpfis\\butpfis.web\\views\\adminfaculty\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|solutionrelative:butpfis.web\\views\\adminfaculty\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|c:\\users\\p amal prasad\\desktop\\butpfis\\butpfis\\butpfis.web\\models\\domain\\facultyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|solutionrelative:butpfis.web\\models\\domain\\facultyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|c:\\users\\p amal prasad\\desktop\\butpfis\\butpfis\\butpfis.web\\views\\adminfaculty\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|solutionrelative:butpfis.web\\views\\adminfaculty\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|c:\\users\\p amal prasad\\desktop\\butpfis\\butpfis\\butpfis.web\\repositories\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|solutionrelative:butpfis.web\\repositories\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|c:\\users\\p amal prasad\\desktop\\butpfis\\butpfis\\butpfis.web\\controllers\\admincoursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|solutionrelative:butpfis.web\\controllers\\admincoursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|c:\\users\\p amal prasad\\desktop\\butpfis\\butpfis\\butpfis.web\\views\\admincourse\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|solutionrelative:butpfis.web\\views\\admincourse\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|c:\\users\\p amal prasad\\desktop\\butpfis\\butpfis\\butpfis.web\\controllers\\editprofilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|solutionrelative:butpfis.web\\controllers\\editprofilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|c:\\users\\p amal prasad\\desktop\\butpfis\\butpfis\\butpfis.web\\views\\editprofile\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EA544381-8EC7-43A6-9876-4F0D6A19C162}|BUTPFIS.web\\BUTPFIS.web.csproj|solutionrelative:butpfis.web\\views\\editprofile\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +43,92 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AdminFacultyController.cs",
-              "DocumentMoniker": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Controllers\\AdminFacultyController.cs",
-              "RelativeDocumentMoniker": "BUTPFIS.web\\Controllers\\AdminFacultyController.cs",
-              "ToolTip": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Controllers\\AdminFacultyController.cs",
-              "RelativeToolTip": "BUTPFIS.web\\Controllers\\AdminFacultyController.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAmwFYAAAAAAAAA",
+              "Title": "Add.cshtml",
+              "DocumentMoniker": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Views\\AdminFaculty\\Add.cshtml",
+              "RelativeDocumentMoniker": "BUTPFIS.web\\Views\\AdminFaculty\\Add.cshtml",
+              "ToolTip": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Views\\AdminFaculty\\Add.cshtml",
+              "RelativeToolTip": "BUTPFIS.web\\Views\\AdminFaculty\\Add.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-26T06:21:50.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CourseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Repositories\\CourseRepository.cs",
+              "RelativeDocumentMoniker": "BUTPFIS.web\\Repositories\\CourseRepository.cs",
+              "ToolTip": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Repositories\\CourseRepository.cs",
+              "RelativeToolTip": "BUTPFIS.web\\Repositories\\CourseRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACcAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T05:44:14.195Z",
+              "WhenOpened": "2024-07-26T06:26:34.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminCoursesController.cs",
+              "DocumentMoniker": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Controllers\\AdminCoursesController.cs",
+              "RelativeDocumentMoniker": "BUTPFIS.web\\Controllers\\AdminCoursesController.cs",
+              "ToolTip": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Controllers\\AdminCoursesController.cs",
+              "RelativeToolTip": "BUTPFIS.web\\Controllers\\AdminCoursesController.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAgwGgAAABYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T06:26:13.711Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FacultyInfo.cs",
-              "DocumentMoniker": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Models\\Domain\\FacultyInfo.cs",
-              "RelativeDocumentMoniker": "BUTPFIS.web\\Models\\Domain\\FacultyInfo.cs",
-              "ToolTip": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Models\\Domain\\FacultyInfo.cs",
-              "RelativeToolTip": "BUTPFIS.web\\Models\\Domain\\FacultyInfo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAApAAAA",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Views\\AdminFaculty\\Edit.cshtml",
+              "RelativeDocumentMoniker": "BUTPFIS.web\\Views\\AdminFaculty\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Views\\AdminFaculty\\Edit.cshtml",
+              "RelativeToolTip": "BUTPFIS.web\\Views\\AdminFaculty\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-26T06:21:12.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Views\\AdminCourse\\Edit.cshtml",
+              "RelativeDocumentMoniker": "BUTPFIS.web\\Views\\AdminCourse\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Views\\AdminCourse\\Edit.cshtml",
+              "RelativeToolTip": "BUTPFIS.web\\Views\\AdminCourse\\Edit.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACIAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-26T06:19:44.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Views\\EditProfile\\Edit.cshtml",
+              "RelativeDocumentMoniker": "BUTPFIS.web\\Views\\EditProfile\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Views\\EditProfile\\Edit.cshtml",
+              "RelativeToolTip": "BUTPFIS.web\\Views\\EditProfile\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-26T05:58:11.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EditProfileController.cs",
+              "DocumentMoniker": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Controllers\\EditProfileController.cs",
+              "RelativeDocumentMoniker": "BUTPFIS.web\\Controllers\\EditProfileController.cs",
+              "ToolTip": "C:\\Users\\P Amal Prasad\\Desktop\\BUTPFIS\\BUTPFIS\\BUTPFIS.web\\Controllers\\EditProfileController.cs",
+              "RelativeToolTip": "BUTPFIS.web\\Controllers\\EditProfileController.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAYwHQAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T10:45:50.505Z",
+              "WhenOpened": "2024-07-25T08:00:32.021Z",
               "EditorCaption": ""
             }
           ]

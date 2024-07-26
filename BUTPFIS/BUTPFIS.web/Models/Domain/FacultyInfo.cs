@@ -10,6 +10,7 @@ namespace BUTPFIS.web.Models.Domain
         public string Designation { get; set; }
         public string MobileNo { get; set; }
         public string Email { get; set; }
+        public string FacultyImageUrl { get; set; }
         public string PersonalInfo { get; set; }
         public string Expertise { get; set; }
         public string Experience { get; set; }
@@ -17,6 +18,8 @@ namespace BUTPFIS.web.Models.Domain
         public string Honours { get; set; }
         public string Patents { get; set; }
         public string Publications { get; set; }
+        public string Seminar { get; set; }
         public DateTime LastUpdateDate { get; set; }
+        public ICollection<CourseInfo> CourseInfos { get; set; }
     }
 }

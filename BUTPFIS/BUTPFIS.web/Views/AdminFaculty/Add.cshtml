@@ -22,6 +22,15 @@
         </div>
 
         <div class="mb-3">
+            <label class="form-label">Department(s)/Course(s)</label>
+            <select class="form-select"
+                    asp-items="@Model.Courses"
+                    asp-for="SelectedCourses">
+            </select>
+        </div>
+
+
+        <div class="mb-3">
             <label class="form-label">Mobile</label>
             <input type="text" class="form-control" id="mobile" asp-for="MobileNo" />
         </div>
@@ -29,6 +38,17 @@
         <div class="mb-3">
             <label class="form-label">Email</label>
             <input type="text" class="form-control" id="email" asp-for="Email" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Profile Photo</label>
+            <input type="file" id="uploadProfilePhoto" class="form-control" />
+            <img src="" id="profilePhotoDisplay" style="display:none;width: 300px;" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Profile Photo URL</label>
+            <input type="text" class="form-control" id="facultyImageUrl" asp-for="FacultyImageUrl" />
         </div>
 
         <div class="mb-3">
@@ -67,6 +87,11 @@
         </div>
 
         <div class="mb-3">
+            <label class="form-label">Seminar</label>
+            <textarea class="form-control" id="seminar" asp-for="Seminar"></textarea>
+        </div>
+        
+        <div class="mb-3">
             <button type="submit" class="btn btn-dark">
                 Save
             </button>
@@ -74,3 +99,59 @@
 
     </form>
 </div>
+
+@section Scripts {
+    <script>
+        var editor1 = new FroalaEditor('#personalInfo', {
+            imageUploadURL: '/api/images'
+        });
+        var editor2 = new FroalaEditor('#education', {
+            imageUploadURL: '/api/images'
+        });
+        var editor3 = new FroalaEditor('#expertise', {
+            imageUploadURL: '/api/images'
+        });
+        var editor4 = new FroalaEditor('#experience', {
+            imageUploadURL: '/api/images'
+        });
+        var editor5 = new FroalaEditor('#honours', {
+            imageUploadURL: '/api/images'
+        });
+        var editor6 = new FroalaEditor('#patents', {
+            imageUploadURL: '/api/images'
+        });
+        var editor7 = new FroalaEditor('#publications', {
+            imageUploadURL: '/api/images'
+        });
+        var editor8 = new FroalaEditor('#seminar', {
+            imageUploadURL: '/api/images'
+        });
+
+        const featuredUploadElement = document.getElementById('uploadProfilePhoto');
+        const facultyImageUrlElement = document.getElementById('facultyImageUrl');
+        const profilePhotoDisplayElement = document.getElementById('profilePhotoDisplay');
+
+        async function profilePhotoUpload(e){
+            console.log(e.target.files[0]);
+
+            let data = new FormData();
+            data.append('file', e.target.files[0]);
+
+            await fetch('/api/images', {
+                method: 'POST',
+                headers: {
+                    'Accept': '*/*',
+                },
+                body: data
+            }).then(response => response.json())
+                .then(result => {
+                    facultyImageUrlElement.value = result.link;
+                    profilePhotoDisplayElement.src = result.link;
+                    profilePhotoDisplayElement.style.display = 'block';
+                })
+        }
+
+        featuredUploadElement.addEventListener('change', profilePhotoUpload);
+
+    </script>
+}

@@ -8,6 +8,20 @@
     </div>
 </div>
 
+<form method="get"
+      asp-controller="AdminFaculty" ,
+      asp-action="List">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col col-md-3 d-flex">
+                <input type="text" class="form-control"
+                       name="searchQuery" value="@ViewBag.SearchQuery" />
+                <button type="submit" class="btn btn-warning ms-3">Search</button>
+            </div>
+        </div>
+    </div>
+</form>
+
 <div class="container py-5">
     @if (Model != null && Model.Any())
     {
@@ -17,15 +31,7 @@
                     <td>Faculty Id</td>
                     <td>Faculty Name</td>
                     <td>Designation</td>
-                    <td>Mobile Number</td>
-                    <td>Email</td>
-                    <td>Personal Information</td>
-                    <td>Expertise</td>
-                    <td>Experience</td>
-                    <td>Education</td>
-                    <td>Honours and Awards</td>
-                    <td>Patents</td>
-                    <td>Publications</td>
+                    <td>Department(s)/Course(s)</td>
                     <td> </td>
                 </tr>
             </thead>
@@ -36,15 +42,14 @@
                         <td>@facultyInfo.FId</td>
                         <td>@facultyInfo.Name</td>
                         <td>@facultyInfo.Designation</td>
-                        <td>@facultyInfo.MobileNo</td>
-                        <td>@facultyInfo.Email</td>
-                        <td>@facultyInfo.PersonalInfo</td>
-                        <td>@facultyInfo.Expertise</td>
-                        <td>@facultyInfo.Experience</td>
-                        <td>@facultyInfo.Education</td>
-                        <td>@facultyInfo.Honours</td>
-                        <td>@facultyInfo.Patents</td>
-                        <td>@facultyInfo.Publications</td>
+                        <td>
+                            <div class="d-flex">
+                                @foreach (var tag in facultyInfo.CourseInfos)
+                                {
+                                    <span class="badge bg-secondary me-1">@tag.CourseName</span>
+                                }
+                            </div>
+                        </td>
 
                         <td>
                             <a asp-area=""

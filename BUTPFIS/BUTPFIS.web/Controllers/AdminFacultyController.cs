@@ -1,7 +1,11 @@
-﻿using BUTPFIS.web.Data;
+﻿using Azure;
+using BUTPFIS.web.Data;
 using BUTPFIS.web.Models.Domain;
 using BUTPFIS.web.Models.ViewModels;
+using BUTPFIS.web.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
@@ -9,17 +13,27 @@ namespace BUTPFIS.web.Controllers
 {
     public class AdminFacultyController : Controller
     {
-        private readonly FISDbContext fisDbContext;
+        private readonly ICourseRepository courseRepository;
+        private readonly IFacultyRepository facultyRepository;
 
-        public AdminFacultyController(FISDbContext fisDbContext)
+        public AdminFacultyController(ICourseRepository courseRepository, IFacultyRepository facultyRepository)
         {
-            this.fisDbContext = fisDbContext;
+            this.courseRepository = courseRepository;
+            this.facultyRepository = facultyRepository;
         }
 
         [HttpGet]
-        public IActionResult Add()
+        public async Task<IActionResult> Add()
         {
-            return View();
+            // get courses from repository
+            var courses = await courseRepository.GetAllASync();
+
+            var model = new AddFacultyRequest
+            {
+                Courses = courses.Select(x => new SelectListItem { Text = x.CourseName, Value = x.CourseId.ToString()})
+            };
+
+            return View(model);
         }
 
         [HttpPost]
@@ -31,26 +45,46 @@ namespace BUTPFIS.web.Controllers
                 Designation = addFacultyRequest.Designation,
                 MobileNo = addFacultyRequest.MobileNo,
                 Email = addFacultyRequest.Email,
+                FacultyImageUrl = addFacultyRequest.FacultyImageUrl,
                 PersonalInfo = addFacultyRequest.PersonalInfo,
                 Expertise = addFacultyRequest.Expertise,
                 Experience = addFacultyRequest.Experience,
                 Education = addFacultyRequest.Education,
                 Honours = addFacultyRequest.Honours,
                 Patents = addFacultyRequest.Patents,
-                Publications = addFacultyRequest.Publications
+                Publications = addFacultyRequest.Publications,
+                Seminar = addFacultyRequest.Seminar
             };
 
-            await fisDbContext.FacultyInfos.AddAsync(facultyInfo);
-            await fisDbContext.SaveChangesAsync();
+            // Map Courses from Selected Courses
+            var selectedCourses = new List<CourseInfo>();
+            foreach (var selectedCourseId in addFacultyRequest.SelectedCourses)
+            {
+                var selectedCourseIdAsGuid = Guid.Parse(selectedCourseId);
+                var existingCourse = await courseRepository.GetAsync(selectedCourseIdAsGuid);
+
+                if (existingCourse != null)
+                {
+                    selectedCourses.Add(existingCourse);
+                }
+            }
+
+            // Mapping courses back to domain model
+            facultyInfo.CourseInfos = selectedCourses;
+
+            await facultyRepository.AddAsync(facultyInfo);
 
             return RedirectToAction("List");
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [ActionName("List")]
-        public async Task<IActionResult> List()
+        public async Task<IActionResult> List(string? searchQuery)
         {
-            var facultyinfos = await fisDbContext.FacultyInfos.ToListAsync();
+            ViewBag.SearchQuery = searchQuery;
+
+            var facultyinfos = await facultyRepository.GetAllASync(searchQuery);
 
             return View(facultyinfos);
         }
@@ -58,27 +92,36 @@ namespace BUTPFIS.web.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(Guid id)
         {
-            var facultyinfo = await fisDbContext.FacultyInfos.FirstOrDefaultAsync(x => x.FId == id);
+            var facultyinfo = await facultyRepository.GetAsync(id);
+            var coursesDomainModel = await courseRepository.GetAllASync();
 
             if (facultyinfo != null)
             {
-                var editFaculty = new EditFaculty
+                var model = new EditFaculty
                 {
                     FId = facultyinfo.FId,
                     Name = facultyinfo.Name,
                     Designation = facultyinfo.Designation,
                     MobileNo = facultyinfo.MobileNo,
                     Email = facultyinfo.Email,
+                    FacultyImageUrl = facultyinfo.FacultyImageUrl,
                     PersonalInfo = facultyinfo.PersonalInfo,
                     Expertise = facultyinfo.Expertise,
                     Experience = facultyinfo.Experience,
                     Education = facultyinfo.Education,
                     Honours = facultyinfo.Honours,
                     Patents = facultyinfo.Patents,
-                    Publications = facultyinfo.Publications
+                    Publications = facultyinfo.Publications,
+                    Seminar = facultyinfo.Seminar,
+                    Courses = coursesDomainModel.Select(x => new SelectListItem
+                    {
+                        Text = x.CourseName,
+                        Value = x.CourseId.ToString()
+                    }),
+                    SelectedCourses = facultyinfo.CourseInfos.Select(x => x.CourseId.ToString()).ToArray()
                 };
 
-                return View(editFaculty);
+                return View(model);
             }
 
             return View(null);
@@ -89,58 +132,65 @@ namespace BUTPFIS.web.Controllers
         public async Task<IActionResult> Edit(EditFaculty editFaculty)
         {
             // map view model back to domain model
-            var editFacultyInfo = new FacultyInfo
+            var facultyDomainModel = new FacultyInfo
             {
                 FId = editFaculty.FId,
                 Name = editFaculty.Name,
                 Designation = editFaculty.Designation,
                 MobileNo = editFaculty.MobileNo,
                 Email = editFaculty.Email,
+                FacultyImageUrl= editFaculty.FacultyImageUrl,
                 PersonalInfo = editFaculty.PersonalInfo,
                 Expertise = editFaculty.Expertise,
                 Experience = editFaculty.Experience,
                 Education = editFaculty.Education,
                 Honours = editFaculty.Honours,
                 Patents = editFaculty.Patents,
-                Publications = editFaculty.Publications
+                Publications = editFaculty.Publications,
+                Seminar= editFaculty.Seminar
             };
 
-            var existingFaculty = await fisDbContext.FacultyInfos.FindAsync(editFacultyInfo.FId);
+            // Map courses to domain model
 
-            if (existingFaculty != null)
+            var selectedCourses = new List<CourseInfo>();
+            foreach (var selectedCourse in editFaculty.SelectedCourses)
             {
-                existingFaculty.Name = editFacultyInfo.Name;
-                existingFaculty.Designation = editFacultyInfo.Designation;
-                existingFaculty.MobileNo = editFacultyInfo.MobileNo;
-                existingFaculty.MobileNo = editFacultyInfo.MobileNo;
-                existingFaculty.Email = editFacultyInfo.Email;
-                existingFaculty.PersonalInfo = editFacultyInfo.PersonalInfo;
-                existingFaculty.Expertise = editFacultyInfo.Expertise;
-                existingFaculty.Experience = editFacultyInfo.Experience;
-                existingFaculty.Education = editFacultyInfo.Education;
-                existingFaculty.Honours = editFacultyInfo.Honours;
-                existingFaculty.Patents = editFacultyInfo.Patents;
-                existingFaculty.Publications = editFacultyInfo.Publications;
+                if (Guid.TryParse(selectedCourse, out var course))
+                {
+                    var foundCourse = await courseRepository.GetAsync(course);
 
-                await fisDbContext.SaveChangesAsync();
-
-                return RedirectToAction("List");
+                    if (foundCourse != null)
+                    {
+                        selectedCourses.Add(foundCourse);
+                    }
+                }
             }
 
-            // Show error notification
-            return RedirectToAction("Edit", new { id = editFacultyInfo.FId});
+            facultyDomainModel.CourseInfos = selectedCourses;
+
+            var updatedFaculty  = await facultyRepository.UpdateAsync(facultyDomainModel);
+
+            if (updatedFaculty != null)
+            {
+                // Show success notification
+            }
+            else
+            {
+                // Show error notification
+            }
+
+            return RedirectToAction("List", new { id = editFaculty.FId});
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Delete(EditFaculty editFaculty)
         {
-            var deletedFaculty = await fisDbContext.FacultyInfos.FindAsync(editFaculty.FId);
+            var deletedFaculty = await facultyRepository.DeleteAsync(editFaculty.FId);
 
             if (deletedFaculty != null)
             {
-                fisDbContext.FacultyInfos.Remove(deletedFaculty);
-                await fisDbContext.SaveChangesAsync();
-
+                //Show success notification
                 return RedirectToAction("List");
             }
 
