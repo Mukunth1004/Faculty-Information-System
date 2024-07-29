@@ -1,0 +1,39 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [ "**/*.cs" ],
+          "exclude": [ "obj/**", "bin/**" ]
+        }
+      ],
+      "dest": "obj/api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [ "*.md", "articles/*.md", "api/*.md" ]
+      },
+      {
+        "exclude": [ "obj/**", "bin/**" ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [ "images/**" ]
+      }
+    ],
+    "overwrite": [ "obj/api/**.yml" ],
+    "template": [ "default" ],
+    "dest": "_site",
+    "globalMetadata": {
+      "_appTitle": "My Documentation"
+    },
+    "fileMetadata": {
+      "toc.yml": {
+        "href": "toc.yml"
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Bloggie.Web.Controllers
+namespace BUTPFIS.web.Controllers
 {
     [Authorize(Roles = "Admin")]
     public class AdminUsersController : Controller

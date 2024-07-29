@@ -67,6 +67,10 @@ namespace BUTPFIS.web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("GoogleScholarLink")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Honours")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -91,6 +95,10 @@ namespace BUTPFIS.web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Publications")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ResearchGateLink")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

@@ -13,7 +13,7 @@
     @if (Model != null)
     {
 
-        <form method="post">
+        <form method="post" asp-action="Edit" asp-controller="AdminFaculty">
 
             <div class="mb-3">
                 <label class="form-label">Faculty Id</label>
@@ -27,7 +27,13 @@
 
             <div class="mb-3">
                 <label class="form-label">Designation</label>
-                <input type="text" class="form-control" id="designation" asp-for="Designation" />
+                <select class="form-control" id="designation" asp-for="Designation">
+                    <option value="HOD">HOD</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Associate Professor">Associate Professor</option>
+                    <option value="Assistant Professor">Assistant Professor</option>
+                    <option value="Guest Faculty/HL">Guest Faculty/HL</option>
+                </select>
             </div>
 
             <div class="mb-3">
@@ -45,7 +51,7 @@
 
             <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input type="text" class="form-control" id="email" asp-for="Email" />
+                <input type="text" class="form-control" id="email" asp-for="Email" readonly />
             </div>
 
             <div class="mb-3">
@@ -60,7 +66,7 @@
                 {
                     <img src="" id="profilePhotoDisplay" style="display:none;width: 300px;" />
                 }
-            
+
             </div>
 
             <div class="mb-3">
@@ -71,6 +77,16 @@
             <div class="mb-3">
                 <label class="form-label">Personal Information</label>
                 <textarea class="form-control" id="personalInfo" asp-for="PersonalInfo"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Google Scholar Link</label>
+                <input type="text" class="form-control" id="googleScholarLink" asp-for="GoogleScholarLink" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">ResearchGate Link</label>
+                <input type="text" class="form-control" id="researchGateLink" asp-for="ResearchGateLink" />
             </div>
 
             <div class="mb-3">
@@ -118,6 +134,7 @@
                         asp-action="Delete">
                     Delete
                 </button>
+
             </div>
 
         </form>
@@ -135,28 +152,28 @@
     <script>
         var editor1 = new FroalaEditor('#personalInfo', {
             imageUploadURL: '/api/images'
-            });
+        });
         var editor2 = new FroalaEditor('#education', {
             imageUploadURL: '/api/images'
-            });
+        });
         var editor3 = new FroalaEditor('#expertise', {
             imageUploadURL: '/api/images'
-            });
+        });
         var editor4 = new FroalaEditor('#experience', {
             imageUploadURL: '/api/images'
-            });
+        });
         var editor5 = new FroalaEditor('#honours', {
             imageUploadURL: '/api/images'
-            });
+        });
         var editor6 = new FroalaEditor('#patents', {
             imageUploadURL: '/api/images'
-            });
+        });
         var editor7 = new FroalaEditor('#publications', {
             imageUploadURL: '/api/images'
-            });
+        });
         var editor8 = new FroalaEditor('#seminar', {
             imageUploadURL: '/api/images'
-            });
+        });
 
         const featuredUploadElement = document.getElementById('uploadProfilePhoto');
         const facultyImageUrlElement = document.getElementById('facultyImageUrl');

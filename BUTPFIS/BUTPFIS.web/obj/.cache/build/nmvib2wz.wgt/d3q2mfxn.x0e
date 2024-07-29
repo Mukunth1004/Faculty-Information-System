@@ -1,0 +1,55 @@
+
+<div id="sidetoggle">
+  <div>
+    <div class="sidefilter">
+      <form class="toc-filter">
+        <span class="glyphicon glyphicon-filter filter-icon"></span>
+        <span class="glyphicon glyphicon-remove clear-icon" id="toc_filter_clear"></span>
+        <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+      </form>
+    </div>
+    <div class="sidetoc">
+      <div class="toc" id="toc">
+          
+          <ul class="nav level1">
+                <li>
+                    <a>Articles</a>
+                </li>
+                <li>
+                    <a href="api/index.md" name="api/toc.html" title="Api Documentation">Api Documentation</a>
+                </li>
+                <li>
+                    <a href="index.html" name="" title="Documentation">Documentation</a>
+                </li>
+                <li>
+                    <a href="abstract.html" name="" title="Abstract">Abstract</a>
+                </li>
+                <li>
+                    <a href="about.html" name="" title="About the Project">About the Project</a>
+                </li>
+                <li>
+                    <a href="data_dictionary.html" name="" title="Data Dictionary">Data Dictionary</a>
+                </li>
+                <li>
+                    <a href="logical_development.html" name="" title="Logical Development">Logical Development</a>
+                </li>
+                <li>
+                    <a href="program_design.html" name="" title="Program Design">Program Design</a>
+                </li>
+                <li>
+                    <a href="testing.html" name="" title="Testing">Testing</a>
+                </li>
+                <li>
+                    <a href="conclusion.html" name="" title="Conclusion">Conclusion</a>
+                </li>
+                <li>
+                    <a href="references.html" name="" title="References">References</a>
+                </li>
+                <li>
+                    <a href="appendix.html" name="" title="Appendix">Appendix</a>
+                </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>

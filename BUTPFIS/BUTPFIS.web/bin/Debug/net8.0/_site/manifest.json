@@ -1,0 +1,185 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/P Amal Prasad/Desktop/BUTPFIS/BUTPFIS/BUTPFIS.web",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "about.md",
+      "output": {
+        ".html": {
+          "relative_path": "about.html",
+          "hash": "vTrO7Ok/EaRA2XlDC/cdVNXJbCsIPfRoCGdWXCKsZyI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "abstract.md",
+      "output": {
+        ".html": {
+          "relative_path": "abstract.html",
+          "hash": "VvMXWMC9pGlEXt6yJ67UtzH1W5G/9bmWTZ4ZsDHwxIY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "jKb8WWFXb8/agZQDhHVfWHsVbTJF7RE82v39McqZ/F8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "appendix.md",
+      "output": {
+        ".html": {
+          "relative_path": "appendix.html",
+          "hash": "r/LndYNNe/2Di5whJYa1IhxhrIy2i6nef2cAK0rzU3M="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "9JPCu/ZqwEdKfZmifbiRUbBglJ+f+AhwBs4wBrwrpko="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "conclusion.md",
+      "output": {
+        ".html": {
+          "relative_path": "conclusion.html",
+          "hash": "3oHQka4wjmrHcR1kjKFU3JslklsNcmk8VQ7SdKZ/CmA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "data_dictionary.md",
+      "output": {
+        ".html": {
+          "relative_path": "data_dictionary.html",
+          "hash": "fbK80HXlHVnhmZaYvTVy0nwrUsb1/B8A/meo47C9cYI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "eCV1mmlsBIZY4l0pVBHIfh/tu3JiIzfLbdcWlLrKOAI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "logical_development.md",
+      "output": {
+        ".html": {
+          "relative_path": "logical_development.html",
+          "hash": "FdVmkiOU2rZWafUgZ9JWkC6KS3IlSj2YwKviqhrUuGU="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "program_design.md",
+      "output": {
+        ".html": {
+          "relative_path": "program_design.html",
+          "hash": "T2Tye8UANhnAxT8NYNqit+dVKUU4n20YXede8hYAr3A="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "references.md",
+      "output": {
+        ".html": {
+          "relative_path": "references.html",
+          "hash": "yhj1Ya4ZsWiDdLqQK34W/lY9QBv/ETIM/u48W5wILaY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "testing.md",
+      "output": {
+        ".html": {
+          "relative_path": "testing.html",
+          "hash": "34myl5AwrCjdqqVp7/Xvb3MDL/rCvHx+3rJuqoEvzus="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 12,
+          "skipped_file_count": 12
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

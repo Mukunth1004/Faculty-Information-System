@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Program Design </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Program Design ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="program-design">Program Design</h1>
+
+<h2 id="overview">Overview</h2>
+<p>The Faculty Information System (FIS) is designed to manage and display information about faculty members within a university department. The system allows administrators to add, update, and delete faculty information and provides a user-friendly interface for students and other stakeholders to view faculty details.</p>
+<h2 id="modules-and-their-functions">Modules and Their Functions</h2>
+<h3 id="1-authentication-and-authorization">1. Authentication and Authorization</h3>
+<ul>
+<li><strong>Purpose:</strong> Secure the application and ensure only authorized users can perform administrative actions.</li>
+<li><strong>Components:</strong><ul>
+<li><strong>Login:</strong> Users can log in using their credentials.</li>
+<li><strong>Role-based Access Control:</strong> Different access levels for administrators and general users.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-faculty-management">2. Faculty Management</h3>
+<ul>
+<li><strong>Purpose:</strong> Manage faculty information including adding, editing, and deleting faculty records.</li>
+<li><strong>Components:</strong><ul>
+<li><strong>Add Faculty:</strong> Form to input faculty details.</li>
+<li><strong>Edit Faculty:</strong> Form to update existing faculty information.</li>
+<li><strong>Delete Faculty:</strong> Option to remove a faculty record from the system.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-course-management">3. Course Management</h3>
+<ul>
+<li><strong>Purpose:</strong> Manage course information and associate courses with faculty members.</li>
+<li><strong>Components:</strong><ul>
+<li><strong>Add Course:</strong> Form to input course details.</li>
+<li><strong>Edit Course:</strong> Form to update existing course information.</li>
+<li><strong>Delete Course:</strong> Option to remove a course record from the system.</li>
+<li><strong>Assign Faculty to Courses:</strong> Interface to associate faculty members with specific courses.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-department-management">4. Department Management</h3>
+<ul>
+<li><strong>Purpose:</strong> Manage department information.</li>
+<li><strong>Components:</strong><ul>
+<li><strong>Add Department:</strong> Form to input department details.</li>
+<li><strong>Edit Department:</strong> Form to update existing department information.</li>
+<li><strong>Delete Department:</strong> Option to remove a department record from the system.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-faculty-information-display">5. Faculty Information Display</h3>
+<ul>
+<li><strong>Purpose:</strong> Display faculty information to users in a structured and user-friendly format.</li>
+<li><strong>Components:</strong><ul>
+<li><strong>Faculty List:</strong> Display all faculty members with their basic information.</li>
+<li><strong>Faculty Details:</strong> Detailed view of a specific faculty member, including profile photo, designation, department, contact information, and associated courses.</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-search-and-filter">6. Search and Filter</h3>
+<ul>
+<li><strong>Purpose:</strong> Allow users to search and filter faculty information based on various criteria.</li>
+<li><strong>Components:</strong><ul>
+<li><strong>Search by Name:</strong> Search faculty members by their name.</li>
+<li><strong>Filter by Department:</strong> Filter faculty members based on the department.</li>
+<li><strong>Filter by Designation:</strong> Filter faculty members based on their designation.</li>
+</ul>
+</li>
+</ul>
+<h2 id="controllers-and-actions">Controllers and Actions</h2>
+<h3 id="adminfacultyinfocontroller">AdminFacultyInfoController</h3>
+<ul>
+<li><strong>Actions:</strong><ul>
+<li><code>Index</code>: Display a list of all faculty members.</li>
+<li><code>Create</code>: Show form to add a new faculty member.</li>
+<li><code>Create (POST)</code>: Save new faculty member to the database.</li>
+<li><code>Edit</code>: Show form to edit an existing faculty member.</li>
+<li><code>Edit (POST)</code>: Update existing faculty member in the database.</li>
+<li><code>Delete</code>: Remove a faculty member from the database.</li>
+</ul>
+</li>
+</ul>
+<h3 id="admincoursecontroller">AdminCourseController</h3>
+<ul>
+<li><strong>Actions:</strong><ul>
+<li><code>Index</code>: Display a list of all courses.</li>
+<li><code>Create</code>: Show form to add a new course.</li>
+<li><code>Create (POST)</code>: Save new course to the database.</li>
+<li><code>Edit</code>: Show form to edit an existing course.</li>
+<li><code>Edit (POST)</code>: Update existing course in the database.</li>
+<li><code>Delete</code>: Remove a course from the database.</li>
+</ul>
+</li>
+</ul>
+<h3 id="admindepartmentcontroller">AdminDepartmentController</h3>
+<ul>
+<li><strong>Actions:</strong><ul>
+<li><code>Index</code>: Display a list of all departments.</li>
+<li><code>Create</code>: Show form to add a new department.</li>
+<li><code>Create (POST)</code>: Save new department to the database.</li>
+<li><code>Edit</code>: Show form to edit an existing department.</li>
+<li><code>Edit (POST)</code>: Update existing department in the database.</li>
+<li><code>Delete</code>: Remove a department from the database.</li>
+</ul>
+</li>
+</ul>
+<h3 id="facultycontroller">FacultyController</h3>
+<ul>
+<li><strong>Actions:</strong><ul>
+<li><code>Index</code>: Display a list of all faculty members.</li>
+<li><code>Details</code>: Display detailed information of a specific faculty member.</li>
+<li><code>Search</code>: Search for faculty members based on criteria.</li>
+</ul>
+</li>
+</ul>
+<h2 id="models">Models</h2>
+<h3 id="faculty">Faculty</h3>
+<ul>
+<li><strong>Properties:</strong><ul>
+<li><code>Id</code>: int</li>
+<li><code>Name</code>: string</li>
+<li><code>Designation</code>: string</li>
+<li><code>Department</code>: string</li>
+<li><code>Email</code>: string</li>
+<li><code>MobileNumber</code>: string</li>
+<li><code>ProfilePhotoPath</code>: string</li>
+</ul>
+</li>
+</ul>
+<h3 id="course">Course</h3>
+<ul>
+<li><strong>Properties:</strong><ul>
+<li><code>Id</code>: int</li>
+<li><code>CourseName</code>: string</li>
+<li><code>Department</code>: string</li>
+</ul>
+</li>
+</ul>
+<h3 id="facultycourse">FacultyCourse</h3>
+<ul>
+<li><strong>Properties:</strong><ul>
+<li><code>FacultyId</code>: int</li>
+<li><code>CourseId</code>: int</li>
+</ul>
+</li>
+</ul>
+<h3 id="department">Department</h3>
+<ul>
+<li><strong>Properties:</strong><ul>
+<li><code>Id</code>: int</li>
+<li><code>DepartmentName</code>: string</li>
+</ul>
+</li>
+</ul>
+<h2 id="views">Views</h2>
+<h3 id="faculty-views">Faculty Views</h3>
+<ul>
+<li><strong>Index.cshtml:</strong> List all faculty members.</li>
+<li><strong>Create.cshtml:</strong> Form to add a new faculty member.</li>
+<li><strong>Edit.cshtml:</strong> Form to edit an existing faculty member.</li>
+<li><strong>Details.cshtml:</strong> Display detailed information of a specific faculty member.</li>
+</ul>
+<h3 id="course-views">Course Views</h3>
+<ul>
+<li><strong>Index.cshtml:</strong> List all courses.</li>
+<li><strong>Create.cshtml:</strong> Form to add a new course.</li>
+<li><strong>Edit.cshtml:</strong> Form to edit an existing course.</li>
+</ul>
+<h3 id="department-views">Department Views</h3>
+<ul>
+<li><strong>Index.cshtml:</strong> List all departments.</li>
+<li><strong>Create.cshtml:</strong> Form to add a new department.</li>
+<li><strong>Edit.cshtml:</strong> Form to edit an existing department.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>The program design for the Faculty Information System ensures a modular and structured approach to managing and displaying faculty information. Each module is designed to handle specific functionalities, making the system scalable and maintainable.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/p-amalprasad/Faculty-Information-System/blob/main/BUTPFIS/BUTPFIS.web/docfx_project/program_design.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

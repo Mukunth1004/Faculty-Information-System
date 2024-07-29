@@ -27,7 +27,13 @@
 
             <div class="mb-3">
                 <label class="form-label">Designation</label>
-                <input type="text" class="form-control" id="designation" asp-for="Designation" />
+                <select class="form-control" id="designation" asp-for="Designation">
+                    <option value="HOD">HOD</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Associate Professor">Associate Professor</option>
+                    <option value="Assistant Professor">Assistant Professor</option>
+                    <option value="Guest Faculty/HL">Guest Faculty/HL</option>
+                </select>
             </div>
 
             <div class="mb-3">
@@ -74,6 +80,16 @@
             </div>
 
             <div class="mb-3">
+                <label class="form-label">Google Scholar Link</label>
+                <input type="text" class="form-control" id="googleScholarLink" asp-for="GoogleScholarLink" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">ResearchGate Link</label>
+                <input type="text" class="form-control" id="researchGateLink" asp-for="ResearchGateLink" />
+            </div>
+
+            <div class="mb-3">
                 <label class="form-label">Education</label>
                 <textarea class="form-control" id="education" asp-for="Education"></textarea>
             </div>
@@ -114,7 +130,7 @@
                 <button type="submit"
                         class="btn btn-danger ms-2"
                         asp-area=""
-                        asp-controller="AdminFaculty"
+                        asp-controller="EditProfile"
                         asp-action="Delete">
                     Delete
                 </button>

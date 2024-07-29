@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Data Dictionary </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Data Dictionary ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="data-dictionary" sourcefile="data_dictionary.md" sourcestartlinenumber="1" sourceendlinenumber="1">Data Dictionary</h1>
+
+<h2 id="table-faculty" sourcefile="data_dictionary.md" sourcestartlinenumber="3" sourceendlinenumber="3">Table: Faculty</h2>
+<table sourcefile="data_dictionary.md" sourcestartlinenumber="4" sourceendlinenumber="12">
+<thead>
+<tr>
+<th>Column</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>int</td>
+<td>Unique identifier for each faculty member.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>nvarchar</td>
+<td>Name of the faculty member.</td>
+</tr>
+<tr>
+<td>Designation</td>
+<td>nvarchar</td>
+<td>Faculty designation (e.g., HOD, Professor).</td>
+</tr>
+<tr>
+<td>Department</td>
+<td>nvarchar</td>
+<td>Department of the faculty.</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>nvarchar</td>
+<td>Email address of the faculty.</td>
+</tr>
+<tr>
+<td>MobileNumber</td>
+<td>nvarchar</td>
+<td>Mobile number of the faculty.</td>
+</tr>
+<tr>
+<td>ProfilePhotoPath</td>
+<td>nvarchar</td>
+<td>File path to the profile photo.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="table-course" sourcefile="data_dictionary.md" sourcestartlinenumber="14" sourceendlinenumber="14">Table: Course</h2>
+<table sourcefile="data_dictionary.md" sourcestartlinenumber="15" sourceendlinenumber="19">
+<thead>
+<tr>
+<th>Column</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>int</td>
+<td>Unique identifier for each course.</td>
+</tr>
+<tr>
+<td>CourseName</td>
+<td>nvarchar</td>
+<td>Name of the course.</td>
+</tr>
+<tr>
+<td>Department</td>
+<td>nvarchar</td>
+<td>Department offering the course.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="table-facultycourse" sourcefile="data_dictionary.md" sourcestartlinenumber="21" sourceendlinenumber="21">Table: FacultyCourse</h2>
+<table sourcefile="data_dictionary.md" sourcestartlinenumber="22" sourceendlinenumber="25">
+<thead>
+<tr>
+<th>Column</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FacultyId</td>
+<td>int</td>
+<td>Foreign key referencing Faculty(Id).</td>
+</tr>
+<tr>
+<td>CourseId</td>
+<td>int</td>
+<td>Foreign key referencing Course(Id).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="table-department" sourcefile="data_dictionary.md" sourcestartlinenumber="27" sourceendlinenumber="27">Table: Department</h2>
+<table sourcefile="data_dictionary.md" sourcestartlinenumber="28" sourceendlinenumber="31">
+<thead>
+<tr>
+<th>Column</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>int</td>
+<td>Unique identifier for each department.</td>
+</tr>
+<tr>
+<td>DepartmentName</td>
+<td>nvarchar</td>
+<td>Name of the department.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-content" sourcefile="data_dictionary.md" sourcestartlinenumber="33" sourceendlinenumber="33">Example Content</h2>
+<h3 id="faculty-table-example" sourcefile="data_dictionary.md" sourcestartlinenumber="35" sourceendlinenumber="35">Faculty Table Example</h3>
+<table sourcefile="data_dictionary.md" sourcestartlinenumber="36" sourceendlinenumber="39">
+<thead>
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>Designation</th>
+<th>Department</th>
+<th>Email</th>
+<th>MobileNumber</th>
+<th>ProfilePhotoPath</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Dr. John Doe</td>
+<td>Professor</td>
+<td>CSE</td>
+<td>johndoe@example.com</td>
+<td>1234567890</td>
+<td>/images/prof_johndoe.jpg</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Dr. Jane Smith</td>
+<td>Assistant Professor</td>
+<td>ECE</td>
+<td>janesmith@example.com</td>
+<td>0987654321</td>
+<td>/images/asst_prof_smith.jpg</td>
+</tr>
+</tbody>
+</table>
+<h3 id="course-table-example" sourcefile="data_dictionary.md" sourcestartlinenumber="41" sourceendlinenumber="41">Course Table Example</h3>
+<table sourcefile="data_dictionary.md" sourcestartlinenumber="42" sourceendlinenumber="45">
+<thead>
+<tr>
+<th>Id</th>
+<th>CourseName</th>
+<th>Department</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Data Structures</td>
+<td>CSE</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Digital Electronics</td>
+<td>ECE</td>
+</tr>
+</tbody>
+</table>
+<h3 id="facultycourse-table-example" sourcefile="data_dictionary.md" sourcestartlinenumber="47" sourceendlinenumber="47">FacultyCourse Table Example</h3>
+<table sourcefile="data_dictionary.md" sourcestartlinenumber="48" sourceendlinenumber="51">
+<thead>
+<tr>
+<th>FacultyId</th>
+<th>CourseId</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="department-table-example" sourcefile="data_dictionary.md" sourcestartlinenumber="53" sourceendlinenumber="53">Department Table Example</h3>
+<table sourcefile="data_dictionary.md" sourcestartlinenumber="54" sourceendlinenumber="57">
+<thead>
+<tr>
+<th>Id</th>
+<th>DepartmentName</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Computer Science &amp; Engineering</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Electronics &amp; Communication Engineering</td>
+</tr>
+</tbody>
+</table>
+<h2 id="notes" sourcefile="data_dictionary.md" sourcestartlinenumber="59" sourceendlinenumber="59">Notes</h2>
+<ul sourcefile="data_dictionary.md" sourcestartlinenumber="60" sourceendlinenumber="62">
+<li sourcefile="data_dictionary.md" sourcestartlinenumber="60" sourceendlinenumber="60">Ensure that foreign keys (<code>FacultyId</code> in <code>FacultyCourse</code> and <code>CourseId</code> in <code>FacultyCourse</code>) are properly set up to enforce referential integrity.</li>
+<li sourcefile="data_dictionary.md" sourcestartlinenumber="61" sourceendlinenumber="61">Adjust data types and constraints as necessary based on your specific requirements and database system.</li>
+<li sourcefile="data_dictionary.md" sourcestartlinenumber="62" sourceendlinenumber="62">Include any additional columns or tables as required by your project�s logic.</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/p-amalprasad/Faculty-Information-System/blob/main/BUTPFIS/BUTPFIS.web/docfx_project/data_dictionary.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

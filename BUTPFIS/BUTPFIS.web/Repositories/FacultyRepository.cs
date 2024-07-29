@@ -52,7 +52,7 @@ namespace BUTPFIS.web.Repositories
 
         public Task<FacultyInfo?> GetAsync(Guid FId)
         {
-            return fisDbContext.FacultyInfos.Include(x => x.CourseInfos).FirstOrDefaultAsync( x => x.FId == FId);
+            return fisDbContext.FacultyInfos.Include(x => x.CourseInfos).FirstOrDefaultAsync(x => x.FId == FId);
         }
 
         public async Task<FacultyInfo?> GetByEmailAsync(string email)
@@ -74,6 +74,8 @@ namespace BUTPFIS.web.Repositories
                 existingFaculty.Email = facultyInfo.Email;
                 existingFaculty.FacultyImageUrl = facultyInfo.FacultyImageUrl;
                 existingFaculty.PersonalInfo = facultyInfo.PersonalInfo;
+                existingFaculty.GoogleScholarLink = facultyInfo.GoogleScholarLink;
+                existingFaculty.ResearchGateLink = facultyInfo.ResearchGateLink;
                 existingFaculty.Expertise = facultyInfo.Expertise;
                 existingFaculty.Experience = facultyInfo.Experience;
                 existingFaculty.Education = facultyInfo.Education;
@@ -89,6 +91,13 @@ namespace BUTPFIS.web.Repositories
             }
 
             return null;
+        }
+
+        public async Task<IEnumerable<FacultyInfo>> GetFacultiesByCourseAsync(string courseName)
+        {
+            return await fisDbContext.FacultyInfos
+                .Where(f => f.CourseInfos.Any(c => c.CourseName == courseName))
+                .ToListAsync();
         }
     }
 }

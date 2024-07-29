@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Program Design </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Program Design ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="program-design" sourcefile="program_design.md" sourcestartlinenumber="1" sourceendlinenumber="1">Program Design</h1>
+
+<h2 id="overview" sourcefile="program_design.md" sourcestartlinenumber="3" sourceendlinenumber="3">Overview</h2>
+<p sourcefile="program_design.md" sourcestartlinenumber="4" sourceendlinenumber="4">The Faculty Information System (FIS) is designed to manage and display information about faculty members within a university department. The system allows administrators to add, update, and delete faculty information and provides a user-friendly interface for students and other stakeholders to view faculty details.</p>
+<h2 id="modules-and-their-functions" sourcefile="program_design.md" sourcestartlinenumber="6" sourceendlinenumber="6">Modules and Their Functions</h2>
+<h3 id="1-authentication-and-authorization" sourcefile="program_design.md" sourcestartlinenumber="8" sourceendlinenumber="8">1. Authentication and Authorization</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="9" sourceendlinenumber="12">
+<li sourcefile="program_design.md" sourcestartlinenumber="9" sourceendlinenumber="9"><strong>Purpose:</strong> Secure the application and ensure only authorized users can perform administrative actions.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="10" sourceendlinenumber="12"><strong>Components:</strong><ul sourcefile="program_design.md" sourcestartlinenumber="11" sourceendlinenumber="12">
+<li sourcefile="program_design.md" sourcestartlinenumber="11" sourceendlinenumber="11"><strong>Login:</strong> Users can log in using their credentials.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="12" sourceendlinenumber="12"><strong>Role-based Access Control:</strong> Different access levels for administrators and general users.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-faculty-management" sourcefile="program_design.md" sourcestartlinenumber="14" sourceendlinenumber="14">2. Faculty Management</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="15" sourceendlinenumber="19">
+<li sourcefile="program_design.md" sourcestartlinenumber="15" sourceendlinenumber="15"><strong>Purpose:</strong> Manage faculty information including adding, editing, and deleting faculty records.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="16" sourceendlinenumber="19"><strong>Components:</strong><ul sourcefile="program_design.md" sourcestartlinenumber="17" sourceendlinenumber="19">
+<li sourcefile="program_design.md" sourcestartlinenumber="17" sourceendlinenumber="17"><strong>Add Faculty:</strong> Form to input faculty details.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="18" sourceendlinenumber="18"><strong>Edit Faculty:</strong> Form to update existing faculty information.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="19" sourceendlinenumber="19"><strong>Delete Faculty:</strong> Option to remove a faculty record from the system.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-course-management" sourcefile="program_design.md" sourcestartlinenumber="21" sourceendlinenumber="21">3. Course Management</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="22" sourceendlinenumber="27">
+<li sourcefile="program_design.md" sourcestartlinenumber="22" sourceendlinenumber="22"><strong>Purpose:</strong> Manage course information and associate courses with faculty members.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="23" sourceendlinenumber="27"><strong>Components:</strong><ul sourcefile="program_design.md" sourcestartlinenumber="24" sourceendlinenumber="27">
+<li sourcefile="program_design.md" sourcestartlinenumber="24" sourceendlinenumber="24"><strong>Add Course:</strong> Form to input course details.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="25" sourceendlinenumber="25"><strong>Edit Course:</strong> Form to update existing course information.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="26" sourceendlinenumber="26"><strong>Delete Course:</strong> Option to remove a course record from the system.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="27" sourceendlinenumber="27"><strong>Assign Faculty to Courses:</strong> Interface to associate faculty members with specific courses.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-department-management" sourcefile="program_design.md" sourcestartlinenumber="29" sourceendlinenumber="29">4. Department Management</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="30" sourceendlinenumber="34">
+<li sourcefile="program_design.md" sourcestartlinenumber="30" sourceendlinenumber="30"><strong>Purpose:</strong> Manage department information.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="31" sourceendlinenumber="34"><strong>Components:</strong><ul sourcefile="program_design.md" sourcestartlinenumber="32" sourceendlinenumber="34">
+<li sourcefile="program_design.md" sourcestartlinenumber="32" sourceendlinenumber="32"><strong>Add Department:</strong> Form to input department details.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="33" sourceendlinenumber="33"><strong>Edit Department:</strong> Form to update existing department information.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="34" sourceendlinenumber="34"><strong>Delete Department:</strong> Option to remove a department record from the system.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-faculty-information-display" sourcefile="program_design.md" sourcestartlinenumber="36" sourceendlinenumber="36">5. Faculty Information Display</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="37" sourceendlinenumber="40">
+<li sourcefile="program_design.md" sourcestartlinenumber="37" sourceendlinenumber="37"><strong>Purpose:</strong> Display faculty information to users in a structured and user-friendly format.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="38" sourceendlinenumber="40"><strong>Components:</strong><ul sourcefile="program_design.md" sourcestartlinenumber="39" sourceendlinenumber="40">
+<li sourcefile="program_design.md" sourcestartlinenumber="39" sourceendlinenumber="39"><strong>Faculty List:</strong> Display all faculty members with their basic information.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="40" sourceendlinenumber="40"><strong>Faculty Details:</strong> Detailed view of a specific faculty member, including profile photo, designation, department, contact information, and associated courses.</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-search-and-filter" sourcefile="program_design.md" sourcestartlinenumber="42" sourceendlinenumber="42">6. Search and Filter</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="43" sourceendlinenumber="47">
+<li sourcefile="program_design.md" sourcestartlinenumber="43" sourceendlinenumber="43"><strong>Purpose:</strong> Allow users to search and filter faculty information based on various criteria.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="44" sourceendlinenumber="47"><strong>Components:</strong><ul sourcefile="program_design.md" sourcestartlinenumber="45" sourceendlinenumber="47">
+<li sourcefile="program_design.md" sourcestartlinenumber="45" sourceendlinenumber="45"><strong>Search by Name:</strong> Search faculty members by their name.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="46" sourceendlinenumber="46"><strong>Filter by Department:</strong> Filter faculty members based on the department.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="47" sourceendlinenumber="47"><strong>Filter by Designation:</strong> Filter faculty members based on their designation.</li>
+</ul>
+</li>
+</ul>
+<h2 id="controllers-and-actions" sourcefile="program_design.md" sourcestartlinenumber="49" sourceendlinenumber="49">Controllers and Actions</h2>
+<h3 id="adminfacultyinfocontroller" sourcefile="program_design.md" sourcestartlinenumber="51" sourceendlinenumber="51">AdminFacultyInfoController</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="52" sourceendlinenumber="58">
+<li sourcefile="program_design.md" sourcestartlinenumber="52" sourceendlinenumber="58"><strong>Actions:</strong><ul sourcefile="program_design.md" sourcestartlinenumber="53" sourceendlinenumber="58">
+<li sourcefile="program_design.md" sourcestartlinenumber="53" sourceendlinenumber="53"><code>Index</code>: Display a list of all faculty members.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="54" sourceendlinenumber="54"><code>Create</code>: Show form to add a new faculty member.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="55" sourceendlinenumber="55"><code>Create (POST)</code>: Save new faculty member to the database.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="56" sourceendlinenumber="56"><code>Edit</code>: Show form to edit an existing faculty member.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="57" sourceendlinenumber="57"><code>Edit (POST)</code>: Update existing faculty member in the database.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="58" sourceendlinenumber="58"><code>Delete</code>: Remove a faculty member from the database.</li>
+</ul>
+</li>
+</ul>
+<h3 id="admincoursecontroller" sourcefile="program_design.md" sourcestartlinenumber="60" sourceendlinenumber="60">AdminCourseController</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="61" sourceendlinenumber="67">
+<li sourcefile="program_design.md" sourcestartlinenumber="61" sourceendlinenumber="67"><strong>Actions:</strong><ul sourcefile="program_design.md" sourcestartlinenumber="62" sourceendlinenumber="67">
+<li sourcefile="program_design.md" sourcestartlinenumber="62" sourceendlinenumber="62"><code>Index</code>: Display a list of all courses.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="63" sourceendlinenumber="63"><code>Create</code>: Show form to add a new course.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="64" sourceendlinenumber="64"><code>Create (POST)</code>: Save new course to the database.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="65" sourceendlinenumber="65"><code>Edit</code>: Show form to edit an existing course.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="66" sourceendlinenumber="66"><code>Edit (POST)</code>: Update existing course in the database.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="67" sourceendlinenumber="67"><code>Delete</code>: Remove a course from the database.</li>
+</ul>
+</li>
+</ul>
+<h3 id="admindepartmentcontroller" sourcefile="program_design.md" sourcestartlinenumber="69" sourceendlinenumber="69">AdminDepartmentController</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="70" sourceendlinenumber="76">
+<li sourcefile="program_design.md" sourcestartlinenumber="70" sourceendlinenumber="76"><strong>Actions:</strong><ul sourcefile="program_design.md" sourcestartlinenumber="71" sourceendlinenumber="76">
+<li sourcefile="program_design.md" sourcestartlinenumber="71" sourceendlinenumber="71"><code>Index</code>: Display a list of all departments.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="72" sourceendlinenumber="72"><code>Create</code>: Show form to add a new department.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="73" sourceendlinenumber="73"><code>Create (POST)</code>: Save new department to the database.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="74" sourceendlinenumber="74"><code>Edit</code>: Show form to edit an existing department.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="75" sourceendlinenumber="75"><code>Edit (POST)</code>: Update existing department in the database.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="76" sourceendlinenumber="76"><code>Delete</code>: Remove a department from the database.</li>
+</ul>
+</li>
+</ul>
+<h3 id="facultycontroller" sourcefile="program_design.md" sourcestartlinenumber="78" sourceendlinenumber="78">FacultyController</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="79" sourceendlinenumber="82">
+<li sourcefile="program_design.md" sourcestartlinenumber="79" sourceendlinenumber="82"><strong>Actions:</strong><ul sourcefile="program_design.md" sourcestartlinenumber="80" sourceendlinenumber="82">
+<li sourcefile="program_design.md" sourcestartlinenumber="80" sourceendlinenumber="80"><code>Index</code>: Display a list of all faculty members.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="81" sourceendlinenumber="81"><code>Details</code>: Display detailed information of a specific faculty member.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="82" sourceendlinenumber="82"><code>Search</code>: Search for faculty members based on criteria.</li>
+</ul>
+</li>
+</ul>
+<h2 id="models" sourcefile="program_design.md" sourcestartlinenumber="84" sourceendlinenumber="84">Models</h2>
+<h3 id="faculty" sourcefile="program_design.md" sourcestartlinenumber="86" sourceendlinenumber="86">Faculty</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="87" sourceendlinenumber="94">
+<li sourcefile="program_design.md" sourcestartlinenumber="87" sourceendlinenumber="94"><strong>Properties:</strong><ul sourcefile="program_design.md" sourcestartlinenumber="88" sourceendlinenumber="94">
+<li sourcefile="program_design.md" sourcestartlinenumber="88" sourceendlinenumber="88"><code>Id</code>: int</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="89" sourceendlinenumber="89"><code>Name</code>: string</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="90" sourceendlinenumber="90"><code>Designation</code>: string</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="91" sourceendlinenumber="91"><code>Department</code>: string</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="92" sourceendlinenumber="92"><code>Email</code>: string</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="93" sourceendlinenumber="93"><code>MobileNumber</code>: string</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="94" sourceendlinenumber="94"><code>ProfilePhotoPath</code>: string</li>
+</ul>
+</li>
+</ul>
+<h3 id="course" sourcefile="program_design.md" sourcestartlinenumber="96" sourceendlinenumber="96">Course</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="97" sourceendlinenumber="100">
+<li sourcefile="program_design.md" sourcestartlinenumber="97" sourceendlinenumber="100"><strong>Properties:</strong><ul sourcefile="program_design.md" sourcestartlinenumber="98" sourceendlinenumber="100">
+<li sourcefile="program_design.md" sourcestartlinenumber="98" sourceendlinenumber="98"><code>Id</code>: int</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="99" sourceendlinenumber="99"><code>CourseName</code>: string</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="100" sourceendlinenumber="100"><code>Department</code>: string</li>
+</ul>
+</li>
+</ul>
+<h3 id="facultycourse" sourcefile="program_design.md" sourcestartlinenumber="102" sourceendlinenumber="102">FacultyCourse</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="103" sourceendlinenumber="105">
+<li sourcefile="program_design.md" sourcestartlinenumber="103" sourceendlinenumber="105"><strong>Properties:</strong><ul sourcefile="program_design.md" sourcestartlinenumber="104" sourceendlinenumber="105">
+<li sourcefile="program_design.md" sourcestartlinenumber="104" sourceendlinenumber="104"><code>FacultyId</code>: int</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="105" sourceendlinenumber="105"><code>CourseId</code>: int</li>
+</ul>
+</li>
+</ul>
+<h3 id="department" sourcefile="program_design.md" sourcestartlinenumber="107" sourceendlinenumber="107">Department</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="108" sourceendlinenumber="110">
+<li sourcefile="program_design.md" sourcestartlinenumber="108" sourceendlinenumber="110"><strong>Properties:</strong><ul sourcefile="program_design.md" sourcestartlinenumber="109" sourceendlinenumber="110">
+<li sourcefile="program_design.md" sourcestartlinenumber="109" sourceendlinenumber="109"><code>Id</code>: int</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="110" sourceendlinenumber="110"><code>DepartmentName</code>: string</li>
+</ul>
+</li>
+</ul>
+<h2 id="views" sourcefile="program_design.md" sourcestartlinenumber="112" sourceendlinenumber="112">Views</h2>
+<h3 id="faculty-views" sourcefile="program_design.md" sourcestartlinenumber="114" sourceendlinenumber="114">Faculty Views</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="115" sourceendlinenumber="118">
+<li sourcefile="program_design.md" sourcestartlinenumber="115" sourceendlinenumber="115"><strong>Index.cshtml:</strong> List all faculty members.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="116" sourceendlinenumber="116"><strong>Create.cshtml:</strong> Form to add a new faculty member.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="117" sourceendlinenumber="117"><strong>Edit.cshtml:</strong> Form to edit an existing faculty member.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="118" sourceendlinenumber="118"><strong>Details.cshtml:</strong> Display detailed information of a specific faculty member.</li>
+</ul>
+<h3 id="course-views" sourcefile="program_design.md" sourcestartlinenumber="120" sourceendlinenumber="120">Course Views</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="121" sourceendlinenumber="123">
+<li sourcefile="program_design.md" sourcestartlinenumber="121" sourceendlinenumber="121"><strong>Index.cshtml:</strong> List all courses.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="122" sourceendlinenumber="122"><strong>Create.cshtml:</strong> Form to add a new course.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="123" sourceendlinenumber="123"><strong>Edit.cshtml:</strong> Form to edit an existing course.</li>
+</ul>
+<h3 id="department-views" sourcefile="program_design.md" sourcestartlinenumber="125" sourceendlinenumber="125">Department Views</h3>
+<ul sourcefile="program_design.md" sourcestartlinenumber="126" sourceendlinenumber="128">
+<li sourcefile="program_design.md" sourcestartlinenumber="126" sourceendlinenumber="126"><strong>Index.cshtml:</strong> List all departments.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="127" sourceendlinenumber="127"><strong>Create.cshtml:</strong> Form to add a new department.</li>
+<li sourcefile="program_design.md" sourcestartlinenumber="128" sourceendlinenumber="128"><strong>Edit.cshtml:</strong> Form to edit an existing department.</li>
+</ul>
+<h2 id="conclusion" sourcefile="program_design.md" sourcestartlinenumber="130" sourceendlinenumber="130">Conclusion</h2>
+<p sourcefile="program_design.md" sourcestartlinenumber="131" sourceendlinenumber="131">The program design for the Faculty Information System ensures a modular and structured approach to managing and displaying faculty information. Each module is designed to handle specific functionalities, making the system scalable and maintainable.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/p-amalprasad/Faculty-Information-System/blob/main/BUTPFIS/BUTPFIS.web/docfx_project/program_design.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

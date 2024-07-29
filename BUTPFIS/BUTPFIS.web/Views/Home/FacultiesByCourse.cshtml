@@ -1,0 +1,60 @@
+﻿@model IEnumerable<BUTPFIS.web.Models.Domain.FacultyInfo>
+
+<h2 class="text-center mt-2 mb-4 bg-secondary bg-opacity-10 py-2">Faculties</h2>
+
+@{
+    // Define the order of designations
+    var designationOrder = new[] { "HOD", "Professor", "Associate Professor", "Assistant Professor", "Guest Faculty/HL" };
+}
+
+@foreach (var designation in designationOrder)
+{
+    var facultiesByDesignation = Model.Where(f => f.Designation == designation).ToList();
+
+    if (facultiesByDesignation.Any())
+    {
+        <div class="container">
+            <h3 class="text-center mb-4 highlight-background">@designation</h3>
+        </div>
+        <div class="container mb-5">
+            <div class="row justify-content-center">
+                @foreach (var faculty in facultiesByDesignation)
+                {
+                    <div class="col-md-3 mb-4">
+                        <a href="@Url.Action("Details", "Details", new { id = faculty.FId })" class="text-decoration-none text-dark">
+                            <div class="card h-100 mx-auto" style="padding-top: 10px; max-width: 300px;">
+                                <img src="@faculty.FacultyImageUrl" class="card-img-top img-fluid" style="height: 200px; object-fit: contain;" alt="@faculty.Name" />
+                                <div class="card-body">
+                                    <h5 class="card-title">@faculty.Name</h5>
+                                    <p class="card-text mb-1">Mobile: @faculty.MobileNo</p>
+                                    <p class="card-text">Email: @faculty.Email</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+}
+
+<style>
+    .text-dark {
+        color: black;
+    }
+
+    .card-body a {
+        text-decoration: none;
+    }
+
+        .card-body a:hover {
+            text-decoration: none;
+        }
+
+    .highlight-background {
+        background-color: #f0f8ff; /* Light color for highlighting */
+        padding: 10px; /* Padding inside the heading */
+        border-radius: 5px; /* Rounded corners */
+        border: 1px solid #ddd; /* Border for better definition */
+    }
+</style>

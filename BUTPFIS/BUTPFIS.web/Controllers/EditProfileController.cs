@@ -44,6 +44,8 @@ namespace BUTPFIS.web.Controllers
                     Email = facultyinfo.Email,
                     FacultyImageUrl = facultyinfo.FacultyImageUrl,
                     PersonalInfo = facultyinfo.PersonalInfo,
+                    GoogleScholarLink = facultyinfo.GoogleScholarLink,
+                    ResearchGateLink = facultyinfo.ResearchGateLink,
                     Expertise = facultyinfo.Expertise,
                     Experience = facultyinfo.Experience,
                     Education = facultyinfo.Education,
@@ -79,6 +81,8 @@ namespace BUTPFIS.web.Controllers
                 Email = editFaculty.Email,
                 FacultyImageUrl = editFaculty.FacultyImageUrl,
                 PersonalInfo = editFaculty.PersonalInfo,
+                GoogleScholarLink = editFaculty.GoogleScholarLink,
+                ResearchGateLink = editFaculty.ResearchGateLink,
                 Expertise = editFaculty.Expertise,
                 Experience = editFaculty.Experience,
                 Education = editFaculty.Education,
@@ -119,6 +123,22 @@ namespace BUTPFIS.web.Controllers
 
             
         }
-        
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(EditFaculty editFaculty)
+        {
+            var deletedFaculty = await facultyRepository.DeleteAsync(editFaculty.FId);
+
+            if (deletedFaculty != null)
+            {
+                //Show success notification
+                TempData["Notification"] = "Faculty entry successfully deleted.";
+                return RedirectToAction("Index", "Home");
+            }
+
+            // Show error notification
+            return RedirectToAction("Edit", new { id = editFaculty.FId });
+        }
+
     }
 }

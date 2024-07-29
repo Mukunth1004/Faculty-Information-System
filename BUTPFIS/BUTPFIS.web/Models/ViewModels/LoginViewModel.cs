@@ -4,7 +4,7 @@ namespace BUTPFIS.web.Models.ViewModels
 {
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Username is required")]
         public string Username { get; set; }
 
         [Required]

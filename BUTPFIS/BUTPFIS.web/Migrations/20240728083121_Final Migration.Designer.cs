@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BUTPFIS.web.Migrations
 {
     [DbContext(typeof(FISDbContext))]
-    [Migration("20240722161941_Third migration")]
-    partial class Thirdmigration
+    [Migration("20240728083121_Final Migration")]
+    partial class FinalMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -70,6 +70,10 @@ namespace BUTPFIS.web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("GoogleScholarLink")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Honours")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -94,6 +98,10 @@ namespace BUTPFIS.web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Publications")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ResearchGateLink")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

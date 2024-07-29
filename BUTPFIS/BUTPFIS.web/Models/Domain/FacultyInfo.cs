@@ -12,6 +12,8 @@ namespace BUTPFIS.web.Models.Domain
         public string Email { get; set; }
         public string FacultyImageUrl { get; set; }
         public string PersonalInfo { get; set; }
+        public string GoogleScholarLink { get; set; }
+        public string ResearchGateLink { get; set; }
         public string Expertise { get; set; }
         public string Experience { get; set; }
         public string Education { get; set; }

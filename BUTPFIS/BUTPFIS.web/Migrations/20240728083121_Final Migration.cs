@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BUTPFIS.web.Migrations
 {
     /// <inheritdoc />
-    public partial class Thirdmigration : Migration
+    public partial class FinalMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,6 +34,8 @@ namespace BUTPFIS.web.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FacultyImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PersonalInfo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    GoogleScholarLink = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ResearchGateLink = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Expertise = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Experience = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Education = table.Column<string>(type: "nvarchar(max)", nullable: false),

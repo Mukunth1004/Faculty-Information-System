@@ -11,6 +11,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BUTPFIS.web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminFacultyController : Controller
     {
         private readonly ICourseRepository courseRepository;
@@ -47,6 +48,8 @@ namespace BUTPFIS.web.Controllers
                 Email = addFacultyRequest.Email,
                 FacultyImageUrl = addFacultyRequest.FacultyImageUrl,
                 PersonalInfo = addFacultyRequest.PersonalInfo,
+                GoogleScholarLink = addFacultyRequest.GoogleScholarLink,
+                ResearchGateLink = addFacultyRequest.ResearchGateLink,
                 Expertise = addFacultyRequest.Expertise,
                 Experience = addFacultyRequest.Experience,
                 Education = addFacultyRequest.Education,
@@ -77,7 +80,6 @@ namespace BUTPFIS.web.Controllers
             return RedirectToAction("List");
         }
 
-        [Authorize(Roles = "Admin")]
         [HttpGet]
         [ActionName("List")]
         public async Task<IActionResult> List(string? searchQuery)
@@ -88,6 +90,7 @@ namespace BUTPFIS.web.Controllers
 
             return View(facultyinfos);
         }
+
 
         [HttpGet]
         public async Task<IActionResult> Edit(Guid id)
@@ -106,6 +109,8 @@ namespace BUTPFIS.web.Controllers
                     Email = facultyinfo.Email,
                     FacultyImageUrl = facultyinfo.FacultyImageUrl,
                     PersonalInfo = facultyinfo.PersonalInfo,
+                    GoogleScholarLink = facultyinfo.GoogleScholarLink,
+                    ResearchGateLink = facultyinfo.ResearchGateLink,
                     Expertise = facultyinfo.Expertise,
                     Experience = facultyinfo.Experience,
                     Education = facultyinfo.Education,
@@ -141,6 +146,8 @@ namespace BUTPFIS.web.Controllers
                 Email = editFaculty.Email,
                 FacultyImageUrl= editFaculty.FacultyImageUrl,
                 PersonalInfo = editFaculty.PersonalInfo,
+                GoogleScholarLink = editFaculty.GoogleScholarLink,
+                ResearchGateLink = editFaculty.ResearchGateLink,
                 Expertise = editFaculty.Expertise,
                 Experience = editFaculty.Experience,
                 Education = editFaculty.Education,
@@ -182,7 +189,7 @@ namespace BUTPFIS.web.Controllers
             return RedirectToAction("List", new { id = editFaculty.FId});
         }
 
-        [Authorize(Roles = "Admin")]
+        
         [HttpPost]
         public async Task<IActionResult> Delete(EditFaculty editFaculty)
         {
@@ -197,5 +204,12 @@ namespace BUTPFIS.web.Controllers
             // Show error notification
             return RedirectToAction("Edit", new { id = editFaculty.FId });
         }
+
+        public async Task<IActionResult> GetFacultiesByCourse(string courseName)
+        {
+            var faculties = await facultyRepository.GetFacultiesByCourseAsync(courseName);
+            return View(faculties);
+        }
+
     }
 }

@@ -17,5 +17,7 @@ namespace BUTPFIS.web.Repositories
 
         Task<FacultyInfo?> DeleteAsync(Guid FId);
 
+        Task<IEnumerable<FacultyInfo>> GetFacultiesByCourseAsync(string courseName);
+
     }
 }

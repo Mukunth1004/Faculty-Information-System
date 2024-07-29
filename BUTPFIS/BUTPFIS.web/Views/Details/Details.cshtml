@@ -1,0 +1,170 @@
+﻿@model BUTPFIS.web.Models.ViewModels.FacultyDetailsViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faculty Details - BUTP</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BUTPFIS.web.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            background-color: #f4f7f9;
+        }
+
+        .container {
+            max-width: 1200px;
+        }
+
+        .profile-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+            .profile-card img {
+                border-radius: 8px;
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+            }
+
+            .profile-card .info {
+                flex: 1;
+            }
+
+            .profile-card h1 {
+                font-size: 2rem;
+                color: #343a40;
+                margin-bottom: 10px;
+            }
+
+            .profile-card p {
+                margin: 5px 0;
+                font-size: 1.1rem;
+            }
+
+            .profile-card .btn {
+                margin-top: 10px;
+                margin-right: 10px;
+            }
+
+        .section-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+            .section-card h2 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+                color: #495057;
+            }
+
+            .section-card p,
+            .section-card ul {
+                line-height: 1.6;
+            }
+
+            .section-card ul {
+                padding-left: 20px;
+            }
+
+                .section-card ul li {
+                    margin-bottom: 10px;
+                }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Include your navigation here -->
+    </header>
+    <main role="main" class="container mt-5">
+        <!-- Profile Card -->
+        <div class="profile-card">
+            <img src="@Model.FacultyImageUrl" alt="@Model.Name" />
+            <div class="info">
+                <h1>@Model.Name</h1>
+                <p><strong>Designation:</strong> @Model.Designation</p>
+                <p><strong>Mobile:</strong> @Model.MobileNo</p>
+                <p><strong>Email:</strong> @Model.Email</p>
+                <a href="@Model.GoogleScholarLink" class="btn btn-primary" target="_blank">Google Scholar</a>
+                <a href="@Model.ResearchGateLink" class="btn btn-secondary" target="_blank">ResearchGate</a>
+
+            </div>
+        </div>
+
+        <!-- Personal Information Card -->
+        <div class="section-card">
+            <h2>Personal Information</h2>
+            <p>@Html.Raw(Model.PersonalInfo)</p>
+        </div>
+
+        <!-- Expertise Card -->
+        <div class="section-card">
+            <h2>Expertise</h2>
+            <p>@Html.Raw(Model.Expertise)</p>
+        </div>
+
+        <!-- Experience Card -->
+        <div class="section-card">
+            <h2>Experience</h2>
+            <p>@Html.Raw(Model.Experience)</p>
+        </div>
+
+        <!-- Education Card -->
+        <div class="section-card">
+            <h2>Education</h2>
+            <p>@Html.Raw(Model.Education)</p>
+        </div>
+
+        <!-- Honours Card -->
+        <div class="section-card">
+            <h2>Honours</h2>
+            <p>@Html.Raw(Model.Honours)</p>
+        </div>
+
+        <!-- Patents Card -->
+        <div class="section-card">
+            <h2>Patents</h2>
+            <p>@Html.Raw(Model.Patents)</p>
+        </div>
+
+        <!-- Publications Card -->
+        <div class="section-card">
+            <h2>Publications</h2>
+            <p>@Html.Raw(Model.Publications)</p>
+        </div>
+
+        <!-- Seminars Card -->
+        <div class="section-card">
+            <h2>Seminars/FDP/Workshops</h2>
+            <p>@Html.Raw(Model.Seminar)</p>
+        </div>
+
+        <!-- Courses Card -->
+        <div class="section-card">
+            <h2>Courses</h2>
+            <ul>
+                @foreach (var course in Model.Courses)
+                {
+                    <li>@course</li>
+                }
+            </ul>
+        </div>
+    </main>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

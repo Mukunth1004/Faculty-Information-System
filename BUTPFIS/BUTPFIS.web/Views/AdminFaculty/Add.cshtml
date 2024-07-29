@@ -9,35 +9,43 @@
 </div>
 
 <div class="container py-3">
-    <form method="post">
+    <form id="addFacultyForm" method="post">
 
         <div class="mb-3">
             <label class="form-label">Faculty Name</label>
             <input type="text" class="form-control" id="name" asp-for="Name" />
+            <span class="text-danger" asp-validation-for="Name"></span>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Designation</label>
-            <input type="text" class="form-control" id="designation" asp-for="Designation" />
+            <select class="form-control" id="designation" asp-for="Designation">
+                <option value="HOD">HOD</option>
+                <option value="Professor">Professor</option>
+                <option value="Associate Professor">Associate Professor</option>
+                <option value="Assistant Professor">Assistant Professor</option>
+                <option value="Guest Faculty/HL">Guest Faculty/HL</option>
+            </select>
+            <span class="text-danger" asp-validation-for="Designation"></span>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Department(s)/Course(s)</label>
-            <select class="form-select"
-                    asp-items="@Model.Courses"
-                    asp-for="SelectedCourses">
+            <select class="form-select" asp-items="@Model.Courses" asp-for="SelectedCourses">
             </select>
+            <span class="text-danger" asp-validation-for="SelectedCourses"></span>
         </div>
-
 
         <div class="mb-3">
             <label class="form-label">Mobile</label>
             <input type="text" class="form-control" id="mobile" asp-for="MobileNo" />
+            <span class="text-danger" asp-validation-for="MobileNo"></span>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Email</label>
             <input type="text" class="form-control" id="email" asp-for="Email" />
+            <span class="text-danger" asp-validation-for="Email"></span>
         </div>
 
         <div class="mb-3">
@@ -49,48 +57,77 @@
         <div class="mb-3">
             <label class="form-label">Profile Photo URL</label>
             <input type="text" class="form-control" id="facultyImageUrl" asp-for="FacultyImageUrl" />
+            <span class="text-danger" asp-validation-for="FacultyImageUrl"></span>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Personal Information</label>
-            <textarea class="form-control" id="personalInfo" asp-for="PersonalInfo"></textarea>
+            <textarea class="form-control" id="personalInfo" name="PersonalInfo"></textarea>
+            <input type="hidden" asp-for="PersonalInfo" />
+            <span class="text-danger" asp-validation-for="PersonalInfo"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Google Scholar Link</label>
+            <input type="text" class="form-control" id="googleScholarLink" asp-for="GoogleScholarLink" />
+            <span class="text-danger" asp-validation-for="GoogleScholarLink"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">ResearchGate Link</label>
+            <input type="text" class="form-control" id="researchGateLink" asp-for="ResearchGateLink" />
+            <span class="text-danger" asp-validation-for="ResearchGateLink"></span>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Education</label>
-            <textarea class="form-control" id="education" asp-for="Education"></textarea>
+            <textarea class="form-control" id="education" name="Education"></textarea>
+            <input type="hidden" asp-for="Education" />
+            <span class="text-danger" asp-validation-for="Education"></span>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Expertise</label>
-            <textarea class="form-control" id="expertise" asp-for="Expertise"></textarea>
+            <textarea class="form-control" id="expertise" name="Expertise"></textarea>
+            <input type="hidden" asp-for="Expertise" />
+            <span class="text-danger" asp-validation-for="Expertise"></span>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Experience</label>
-            <textarea class="form-control" id="experience" asp-for="Experience"></textarea>
+            <textarea class="form-control" id="experience" name="Experience"></textarea>
+            <input type="hidden" asp-for="Experience" />
+            <span class="text-danger" asp-validation-for="Experience"></span>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Honours and Awards</label>
-            <textarea class="form-control" id="honours" asp-for="Honours"></textarea>
+            <textarea class="form-control" id="honours" name="Honours"></textarea>
+            <input type="hidden" asp-for="Honours" />
+            <span class="text-danger" asp-validation-for="Honours"></span>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Patents</label>
-            <textarea class="form-control" id="patents" asp-for="Patents"></textarea>
+            <textarea class="form-control" id="patents" name="Patents"></textarea>
+            <input type="hidden" asp-for="Patents" />
+            <span class="text-danger" asp-validation-for="Patents"></span>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Publications</label>
-            <textarea class="form-control" id="publications" asp-for="Publications"></textarea>
+            <textarea class="form-control" id="publications" name="Publications"></textarea>
+            <input type="hidden" asp-for="Publications" />
+            <span class="text-danger" asp-validation-for="Publications"></span>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Seminar</label>
-            <textarea class="form-control" id="seminar" asp-for="Seminar"></textarea>
+            <label class="form-label">Seminar/FDP/Workshop</label>
+            <textarea class="form-control" id="seminar" name="Seminar"></textarea>
+            <input type="hidden" asp-for="Seminar" />
+            <span class="text-danger" asp-validation-for="Seminar"></span>
         </div>
-        
+
         <div class="mb-3">
             <button type="submit" class="btn btn-dark">
                 Save
@@ -101,37 +138,101 @@
 </div>
 
 @section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
     <script>
         var editor1 = new FroalaEditor('#personalInfo', {
-            imageUploadURL: '/api/images'
+            imageUploadURL: '/api/images',
+            events: {
+                'initialized': function () {
+                    this.html.set('<p style="color: lightgray; font-size: 14px; font-style: italic;">Your Personal Information goes here...</p>');
+                }
+            }
         });
         var editor2 = new FroalaEditor('#education', {
-            imageUploadURL: '/api/images'
+            imageUploadURL: '/api/images',
+            events: {
+                'initialized': function () {
+                    this.html.set('<p style="color: lightgray; font-size: 14px; font-style: italic;">Your Education Informartion goes here...</p>');
+                }
+            }
         });
         var editor3 = new FroalaEditor('#expertise', {
-            imageUploadURL: '/api/images'
+            imageUploadURL: '/api/images',
+            events: {
+                'initialized': function () {
+                    this.html.set('<p style="color: lightgray; font-size: 14px; font-style: italic;">Your Expertise Information goes here...</p>');
+                }
+            }
         });
         var editor4 = new FroalaEditor('#experience', {
-            imageUploadURL: '/api/images'
+            imageUploadURL: '/api/images',
+            events: {
+                'initialized': function () {
+                    this.html.set('<p style="color: lightgray; font-size: 14px; font-style: italic;">Your Experience goes here...</p>');
+                }
+            }
         });
         var editor5 = new FroalaEditor('#honours', {
-            imageUploadURL: '/api/images'
+            imageUploadURL: '/api/images',
+            events: {
+                'initialized': function () {
+                    this.html.set('<p style="color: lightgray; font-size: 14px; font-style: italic;">Your Honour(s)/Award(s) Information goes here...</p>');
+                }
+            }
         });
         var editor6 = new FroalaEditor('#patents', {
-            imageUploadURL: '/api/images'
+            imageUploadURL: '/api/images',
+            events: {
+                'initialized': function () {
+                    this.html.set('<p style="color: lightgray; font-size: 14px; font-style: italic;">Your Patents Information goes here...</p>');
+                }
+            }
         });
         var editor7 = new FroalaEditor('#publications', {
-            imageUploadURL: '/api/images'
+            imageUploadURL: '/api/images',
+            events: {
+                'initialized': function () {
+                    this.html.set('<p style="font-weight: bold; font-size: 16px;">Books:</p><p></p><p style="font-weight: bold; font-size: 16px;">Journals:</p><p></p>');
+                }
+            }
         });
         var editor8 = new FroalaEditor('#seminar', {
-            imageUploadURL: '/api/images'
+            imageUploadURL: '/api/images',
+            events: {
+                'initialized': function () {
+                    this.html.set(`
+                            <p style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">Seminar(s):</p>
+                            <ul style="margin-top: 0;">
+                                <li style="margin-bottom: 5px;">Attended:</li>
+                                <li>Participated:</li>
+                            </ul>
+                            <p style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">FDP(s):</p>
+                            <ul style="margin-top: 0;">
+                                <li style="margin-bottom: 5px;">Attended:</li>
+                                <li>Participated:</li>
+                            </ul>
+                            <p style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">Workshop(s):</p>
+                            <ul style="margin-top: 0;">
+                                <li style="margin-bottom: 5px;">Attended:</li>
+                                <li>Participated:</li>
+                            </ul>
+                        `);
+                }
+            }
         });
+
+
+
+
 
         const featuredUploadElement = document.getElementById('uploadProfilePhoto');
         const facultyImageUrlElement = document.getElementById('facultyImageUrl');
         const profilePhotoDisplayElement = document.getElementById('profilePhotoDisplay');
 
-        async function profilePhotoUpload(e){
+        async function profilePhotoUpload(e) {
             console.log(e.target.files[0]);
 
             let data = new FormData();
@@ -153,5 +254,47 @@
 
         featuredUploadElement.addEventListener('change', profilePhotoUpload);
 
+    </script>
+
+    <script>
+        function syncEditorContent(editor, hiddenField) {
+            $(hiddenField).val(editor.html.get()).trigger('change');
+        }
+
+        $(document).ready(function () {
+            // Initialize Froala Editors
+            var editors = {};
+            ['personalInfo', 'education', 'expertise', 'experience', 'honours', 'patents', 'publications', 'seminar'].forEach(function (id) {
+                var editor = new FroalaEditor('#' + id, {
+                    imageUploadURL: '/api/images',
+                    events: {
+                        'contentChanged': function () {
+                            syncEditorContent(this, 'input[name="' + id + '"]');
+                        }
+                    }
+                });
+                editors[id] = editor;
+            });
+
+            // Form validation
+            $('#addFacultyForm').validate({
+                ignore: '',
+                errorClass: 'text-danger',
+                errorElement: 'span',
+                highlight: function (element, errorClass) {
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function (element, errorClass) {
+                    $(element).removeClass('is-invalid');
+                },
+                submitHandler: function (form) {
+                    // Sync all editor content before submit
+                    Object.keys(editors).forEach(function (id) {
+                        syncEditorContent(editors[id], 'input[name="' + id + '"]');
+                    });
+                    form.submit();
+                }
+            });
+        });
     </script>
 }
