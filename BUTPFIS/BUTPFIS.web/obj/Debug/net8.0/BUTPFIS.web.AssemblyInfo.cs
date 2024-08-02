@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BUTPFIS.web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3d28cf4c280b208154f50b9e7b01ff7d6cec9aa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63e30773515a3c48a272c733116683e731ea77c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("BUTPFIS.web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BUTPFIS.web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

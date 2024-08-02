@@ -4,22 +4,30 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-4">
-            <div class="card text-center" style="cursor: pointer;" onclick="location.href='@Url.Action("FacultiesByCourse", "Home", new { courseName = "M.Sc. - Artificial Intelligence" })';">
+        <!-- Artificial Intelligence Box -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-center equal-height-card" style="cursor: pointer;" onclick="location.href='@Url.Action("FacultiesByCourse", "Home", new { courseName = "M.Sc. - Artificial Intelligence" })';">
+                <img src="https://res.cloudinary.com/djg5iadcq/image/upload/v1722411229/iycdj3uikazofk2bgdcy.jpg" class="card-img-top" alt="Artificial Intelligence" />
                 <div class="card-body">
                     <h3 class="card-title">Artificial Intelligence</h3>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card text-center" style="cursor: pointer;" onclick="location.href='@Url.Action("FacultiesByCourse", "Home", new { courseName = "M.Sc. - Data Science" })';">
+
+        <!-- Data Science Box -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-center equal-height-card" style="cursor: pointer;" onclick="location.href='@Url.Action("FacultiesByCourse", "Home", new { courseName = "M.Sc. - Data Science" })';">
+                <img src="https://res.cloudinary.com/djg5iadcq/image/upload/v1722411288/yvkwabraphjwyvd8nf31.jpg" class="card-img-top" alt="Data Science" />
                 <div class="card-body">
                     <h3 class="card-title">Data Science</h3>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card text-center" style="cursor: pointer;" onclick="location.href='@Url.Action("FacultiesByCourse", "Home", new { courseName = "M.Sc. - Computer Science" })';">
+
+        <!-- Computer Science Box -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-center equal-height-card" style="cursor: pointer;" onclick="location.href='@Url.Action("FacultiesByCourse", "Home", new { courseName = "M.Sc. - Computer Science" })';">
+                <img src="https://res.cloudinary.com/djg5iadcq/image/upload/v1722411314/x2ebhflxkgpi57b3mzcg.jpg" class="card-img-top" alt="Computer Science" />
                 <div class="card-body">
                     <h3 class="card-title">Computer Science</h3>
                 </div>
@@ -30,13 +38,32 @@
 
 <style>
     .card {
-        margin-bottom: 20px;
-        padding: 30px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         transition: 0.3s;
+        border: none;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
     }
 
-        .card:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        }
+    .equal-height-card {
+        height: 100%;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 200px; /* Fixed height for image */
+        object-fit: cover; /* Ensures the image covers the area */
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .card-body {
+        padding: 20px;
+        flex-grow: 1; /* Allows card body to take up remaining space */
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
 </style>
